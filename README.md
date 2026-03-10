@@ -1,5 +1,7 @@
 # JavaScript Frameworks Course Assignment
 
+![image](https://jereriviel-js-frameworks.netlify.app/assets/images/meerkat_thumbnail.webp)
+
 ## Goal
 
 Build a fully functional, responsive online shop using React or Next.js with TypeScript, demonstrating the ability to integrate APIs, manage state, apply software architecture principles, and justify framework choices in a real-world digital solution.
@@ -95,7 +97,7 @@ npm run prepare
 
 ## Deployment
 
-This site is deployed using Netlify: https://js-fw-ca.netlify.app/
+This site is deployed using Netlify: https://jereriviel-js-frameworks.netlify.app/
 
 ## Contact
 
