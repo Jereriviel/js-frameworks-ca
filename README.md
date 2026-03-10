@@ -1,6 +1,6 @@
 # JavaScript Frameworks Course Assignment
 
-![image](https://jereriviel-js-frameworks.netlify.app/assets/images/meerkat_thumbnail.webp)
+![image](https://jereriviel-js-frameworks.netlify.app/images/meerkat_thumbnail.webp)
 
 ## Goal
 
@@ -52,7 +52,7 @@ The application allows users to:
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/NoroffFEU/jsfw-2025-v1-carina-s-js-frameworks-ca.git
+git clone https://github.com/Jereriviel/js-frameworks-ca.git
 ```
 
 2. Install dependencies
