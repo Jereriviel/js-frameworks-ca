@@ -2,11 +2,18 @@ import type { Product } from "../../types/Product";
 
 type Props = {
   product: Product;
+  isActive?: boolean;
 };
 
-const SearchResultsProduct = ({ product }: Props) => {
+const SearchResultsProduct = ({ product, isActive }: Props) => {
   return (
-    <article className="border-gray-medium hover:bg-secondary-ultra-light flex cursor-pointer items-center gap-4 border-b bg-white p-4 transition duration-500 ease-in-out sm:items-start">
+    <article
+      className={`border-gray-medium flex cursor-pointer items-center gap-4 border-b p-4 transition duration-200 ease-in-out sm:items-start ${
+        isActive
+          ? "bg-secondary-ultra-light"
+          : "hover:bg-secondary-ultra-light bg-white"
+      }`}
+    >
       <img
         src={product.image.url}
         alt={product.image.alt}

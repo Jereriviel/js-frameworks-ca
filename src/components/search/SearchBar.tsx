@@ -21,7 +21,7 @@ export function SearchBar() {
       const json = await res.json();
       return json.data;
     },
-    enabled: query.length > 2,
+    enabled: query.trim().length > 0,
   });
 
   const filteredProducts = products.filter((product) =>
@@ -42,20 +42,34 @@ export function SearchBar() {
           aria-label="Search input"
           className="w-full px-10 py-2 sm:px-8"
           placeholder="Search for products"
+          value={query}
           onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && filteredProducts.length === 0) {
+              navigate(`/noresults?query=${encodeURIComponent(query)}`);
+            }
+          }}
         />
         <span className="iconify-[material-symbols--search] text-gray-dark absolute top-1/2 left-2 -translate-y-1/2 md:left-2"></span>
       </div>
 
       <ComboboxOptions
         anchor="bottom"
-        className="w-(--input-width) overflow-hidden rounded-sm empty:invisible"
+        className="z-60 mt-1 w-(--input-width) overflow-hidden rounded-sm"
       >
-        {filteredProducts.map((product) => (
-          <ComboboxOption key={product.id} value={product}>
-            <SearchResultsProduct product={product} />
-          </ComboboxOption>
-        ))}
+        {query.length > 0 && filteredProducts.length === 0 ? (
+          <div className="bg-white p-4 text-sm">
+            No matching products found.
+          </div>
+        ) : (
+          filteredProducts.map((product) => (
+            <ComboboxOption key={product.id} value={product}>
+              {({ focus }) => (
+                <SearchResultsProduct product={product} isActive={focus} />
+              )}
+            </ComboboxOption>
+          ))
+        )}
       </ComboboxOptions>
     </Combobox>
   );

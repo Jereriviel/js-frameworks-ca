@@ -24,8 +24,8 @@ export class ApiError extends BaseError {
       if (json.errors && json.errors[0]?.message) {
         message = json.errors[0].message;
       }
-    } catch (parseError) {
-      console.warn("Failed to parse error response as JSON:", parseError);
+    } catch {
+      // Ignore invalid/non-JSON responses
     }
 
     return new ApiError(message, response.status, details);
