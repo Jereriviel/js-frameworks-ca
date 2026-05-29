@@ -30,8 +30,11 @@ const CartItem = ({ product, quantity }: Props) => {
         <div className="flex w-full flex-col gap-4">
           <div className="flex flex-col">
             <div className="flex items-start justify-between">
-              <h3 className="font-semibold">{product.title}</h3>
-              <RemoveButton onClick={() => removeItem(product.id)} />
+              <h3 className="font-semibold sm:text-lg">{product.title}</h3>
+              <RemoveButton
+                list="cart"
+                onClick={() => removeItem(product.id)}
+              />
             </div>
             <div className="mt-2">
               <QuantitySelector productId={product.id} quantity={quantity} />

@@ -2,12 +2,13 @@ import showSuccessToast from "./Toast";
 
 type RemoveButtonProps = {
   onClick: () => void;
+  list: string;
 };
 
-const RemoveButton = ({ onClick }: RemoveButtonProps) => {
+const RemoveButton = ({ onClick, list }: RemoveButtonProps) => {
   const handleClick = () => {
     onClick();
-    showSuccessToast("Item removed from cart.");
+    showSuccessToast(`Item removed from ${list}`);
   };
 
   return (

@@ -10,6 +10,7 @@ import DiscountBadge from "../components/product/DiscountBadge";
 import AddToCartButton from "../components/product/AddToCartButton";
 import ErrorModal from "../components/common/ErrorModal";
 import ProductDetailsSkeleton from "../components/product/ProductDetailsSkeleton";
+import AddFavouriteButton from "../components/favourites/AddFavouriteButton";
 
 function ProductDetailsPage() {
   const { id } = useParams<{ id: string }>();
@@ -58,10 +59,16 @@ function ProductDetailsPage() {
                 className="aspect-4/3 w-full max-w-145 rounded-sm object-cover"
               />
             </div>
-            <div className="flex max-w-145 flex-col gap-4 py-8 md:py-0">
-              <h1 className="text-3xl font-semibold md:text-4xl">
-                {product.title}
-              </h1>
+            <div className="flex w-full max-w-145 flex-col gap-4 py-8 md:py-0">
+              <div className="flex justify-between">
+                <h1 className="truncate text-3xl font-semibold md:text-4xl">
+                  {product.title}
+                </h1>
+                <div className="relative w-14">
+                  <AddFavouriteButton product={product} />
+                </div>
+              </div>
+
               <div className="flex gap-2">
                 <div>
                   <Rating rating={product.rating} />
@@ -104,7 +111,7 @@ function ProductDetailsPage() {
                 )}
               </div>
               <div className="py-4">
-                <AddToCartButton product={product} />
+                <AddToCartButton product={product} size="medium" />
               </div>
             </div>
           </section>

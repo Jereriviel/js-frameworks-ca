@@ -4,17 +4,23 @@ import showSuccessToast from "../common/Toast";
 
 type Props = {
   product: Product;
+  size: "small" | "medium";
 };
 
-function AddToCartButton({ product }: Props) {
+function AddToCartButton({ product, size }: Props) {
   const addItem = useCartStore((state) => state.addItem);
   const handleClick = () => {
     addItem(product);
     showSuccessToast("Item added to cart.");
   };
 
+  const btnSize = {
+    small: "btn-primary-small",
+    medium: "btn-primary",
+  };
+
   return (
-    <button onClick={handleClick} className="btn-primary">
+    <button onClick={handleClick} className={`${btnSize[size]}`}>
       Add to Cart
     </button>
   );

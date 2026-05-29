@@ -2,6 +2,7 @@ import type { Product } from "../../types/Product";
 import { Link } from "react-router-dom";
 import DiscountBadge from "./DiscountBadge";
 import Rating from "./Rating";
+import AddFavouriteButton from "../favourites/AddFavouriteButton";
 
 type Props = {
   product: Product;
@@ -12,7 +13,8 @@ const ProductCard = ({ product }: Props) => {
   const numberOfRatings = product.reviews.length;
 
   return (
-    <article className="border-gray-light grid-cols-[minmax(0, 1fr)] grid cursor-pointer grid-rows-[max-content] rounded-sm border transition duration-300 ease-in-out sm:hover:scale-103 sm:hover:shadow-lg">
+    <article className="border-gray-light grid-cols-[minmax(0, 1fr)] relative grid cursor-pointer grid-rows-[max-content] rounded-sm border transition duration-300 ease-in-out sm:hover:scale-103 sm:hover:shadow-lg">
+      <AddFavouriteButton product={product} />
       <Link to={`/product/${product.id}`}>
         <div className="relative">
           <DiscountBadge size="medium" product={product} />

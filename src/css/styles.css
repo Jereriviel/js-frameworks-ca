@@ -45,6 +45,10 @@
     @apply bg-secondary-light hover:bg-secondary w-full rounded-sm px-5 py-3 text-center text-lg font-medium transition duration-500 ease-in-out sm:w-fit;
   }
 
+  .btn-primary-small {
+    @apply bg-secondary-light hover:bg-secondary w-full rounded-sm px-3.5 py-1.5 text-center font-medium transition duration-500 ease-in-out sm:w-fit;
+  }
+
   .btn-round {
     @apply sm:hover:bg-secondary-ultra-light flex size-8 items-center justify-center rounded-full bg-white text-lg font-medium transition duration-500 ease-in-out sm:size-12;
   }

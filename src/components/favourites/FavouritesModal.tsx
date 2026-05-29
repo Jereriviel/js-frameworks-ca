@@ -5,6 +5,8 @@ import {
   DialogBackdrop,
 } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
+import useFavouritesStore from "../../store/favouriteStore";
+import FavouriteItem from "./FavouritesItem";
 
 type Props = {
   isOpen: boolean;
@@ -12,6 +14,8 @@ type Props = {
 };
 
 function FavouritesModal({ isOpen, onClose }: Props) {
+  const favourites = useFavouritesStore((state) => state.favourites);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -51,7 +55,17 @@ function FavouritesModal({ isOpen, onClose }: Props) {
                 <hr className="text-gray-medium" />
               </div>
               <div>
-                <p>Favourites coming soon...</p>
+                <div>
+                  {favourites.length === 0 ? (
+                    <p className="text-gray-dark my-8 text-center text-lg">
+                      No favourites yet
+                    </p>
+                  ) : (
+                    favourites.map((product) => (
+                      <FavouriteItem key={product.id} product={product} />
+                    ))
+                  )}
+                </div>
               </div>
             </DialogPanel>
           </motion.div>
