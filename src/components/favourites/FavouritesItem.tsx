@@ -40,7 +40,7 @@ const FavouriteItem = ({ product }: Props) => {
             </div>
             <AddToCartButton product={product} size="small" />
             <div className="flex justify-end">
-              <div className="flex flex-col gap-1 text-right sm:gap-2">
+              <div className="flex flex-col gap-1 pt-1 text-right sm:gap-2">
                 {hasDiscount ? (
                   <>
                     <s className="text-gray-dark text-sm">

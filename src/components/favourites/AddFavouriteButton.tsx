@@ -26,7 +26,7 @@ const AddFavouriteButton = ({ product }: Props) => {
   return (
     <button
       onClick={handleClick}
-      className="bg-primary-light/50 absolute top-2 right-2 z-50 flex h-10 w-10 items-center justify-center rounded-full"
+      className="bg-primary-light/50 absolute top-2 right-2 z-40 flex h-10 w-10 items-center justify-center rounded-full"
       aria-label={isFavourite ? "Remove from favourites" : "Add to favourites"}
     >
       <span
