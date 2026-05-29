@@ -114,7 +114,7 @@ const ContactForm = () => {
           </Field>
           <Field>
             <button
-              className={`btn-primary mt-4 flex items-center justify-center ${
+              className={`btn-primary btn-base mt-4 ${
                 !isValid || isSubmitting ? "cursor-not-allowed opacity-50" : ""
               }`}
               type="submit"

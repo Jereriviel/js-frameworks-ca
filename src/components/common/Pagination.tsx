@@ -14,7 +14,7 @@ const Pagination = ({
   return (
     <div className="flex items-center justify-center gap-4 py-6">
       <button
-        className="btn-round disabled:text-gray-medium"
+        className="btn-round btn-base disabled:text-gray-medium"
         disabled={page === 1}
         onClick={onPrevious}
       >
@@ -29,7 +29,7 @@ const Pagination = ({
       </div>
 
       <button
-        className="btn-round disabled:text-gray-medium"
+        className="btn-round btn-base disabled:text-gray-medium"
         disabled={page === totalPages}
         onClick={onNext}
       >

@@ -18,7 +18,7 @@ function NoResultsPage() {
           Sorry, no matching results found.
         </p>
       </div>
-      <a href="/" className="btn-primary">
+      <a href="/" className="btn-primary btn-base">
         Back to products
       </a>
     </section>

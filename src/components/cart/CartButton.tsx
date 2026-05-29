@@ -6,7 +6,11 @@ type CartButtonProps = {
 
 const CartButton = ({ onClick }: CartButtonProps) => {
   return (
-    <button onClick={onClick} className="btn-round relative" aria-label="Cart">
+    <button
+      onClick={onClick}
+      className="btn-round btn-base relative"
+      aria-label="Cart"
+    >
       <span className="iconify-[material-symbols--shopping-bag-outline]"></span>
       <CartIndicator />
     </button>

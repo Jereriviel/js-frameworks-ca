@@ -36,10 +36,7 @@ function ErrorModal({ isOpen, message, description, onClose }: Props) {
                   </DialogTitle>
                 </div>
 
-                <button
-                  className="btn-round flex items-center justify-center"
-                  onClick={onClose}
-                >
+                <button className="btn-round btn-base" onClick={onClose}>
                   <span className="iconify-[material-symbols--close]"></span>
                 </button>
               </div>
@@ -51,7 +48,7 @@ function ErrorModal({ isOpen, message, description, onClose }: Props) {
               <p>{message}.</p>
             </div>
             <div className="flex w-full justify-end">
-              <button className="btn-primary" onClick={onClose}>
+              <button className="btn-primary btn-base" onClick={onClose}>
                 Ok
               </button>
             </div>

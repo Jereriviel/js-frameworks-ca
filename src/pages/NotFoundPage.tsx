@@ -25,7 +25,7 @@ function NotFoundPage() {
           The page you're looking for has been moved or does not exist.
         </p>
       </div>
-      <a href="/" className="btn-primary">
+      <a href="/" className="btn-primary btn-base">
         Back to products
       </a>
     </section>

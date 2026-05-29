@@ -20,7 +20,7 @@ function AddToCartButton({ product, size }: Props) {
   };
 
   return (
-    <button onClick={handleClick} className={`${btnSize[size]}`}>
+    <button onClick={handleClick} className={`btn-base ${btnSize[size]}`}>
       Add to Cart
     </button>
   );

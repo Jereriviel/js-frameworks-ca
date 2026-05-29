@@ -45,10 +45,7 @@ function FavouritesModal({ isOpen, onClose }: Props) {
                   <DialogTitle className="text-2xl font-bold">
                     Your Favourites
                   </DialogTitle>
-                  <button
-                    className="btn-round flex items-center justify-center"
-                    onClick={onClose}
-                  >
+                  <button className="btn-round btn-base" onClick={onClose}>
                     <span className="iconify-[material-symbols--close]"></span>
                   </button>
                 </div>
